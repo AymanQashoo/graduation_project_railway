@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+__pycache__
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Local development settings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database files
+*.sqlite3
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Mypy cache
+.mypy_cache/
+
+
+# Custom ignored file types
+*.jsonl
+*.json
+*.joblib
+*.rating
+*.csv
+*.tsv
+*.txt
+*.npz
+*.npy
+*.pkl
+*.joblib
+*.dll
+*.lib
+myenv/*

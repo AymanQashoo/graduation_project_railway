@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "eals"
+version = "0.9.6"
+description = "eALS - Element-wise Alternating Least Squares"
+authors = ["Akira Kitauchi <kitauchi@gmail.com>", "Michihiro Nakamura <nakamichi@nakamichi.org>"]
+homepage = "https://github.com/newspicks"
+repository = "https://github.com/newspicks/eals"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+scipy = "^1.10.1"
+numba = "^0.57.0"
+joblib = "^1.2.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.1"
+black = "^23.1.0"
+autoflake = "^2.0.1"
+isort = "^5.12.0"
+pylint = "^2.16.2"
+flake8 = "^2.3.0"
+mypy = "^1.0.1"
+ipython = "^8.11.0"
+ipykernel = "^6.21.2"
+tox = "^4.4.6"
+
+[tool.isort]
+line_length = 99
+multi_line_output = 0
+atomic = true
+
+[tool.black]
+line-length = 99
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
