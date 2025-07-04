@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI, Body
 from fastapi.middleware.cors import CORSMiddleware
 from producer import start_kafka_producer, stop_kafka_producer, send_message
@@ -8,6 +12,7 @@ from Routes.itemRoutes import router as item_router
 from Routes.datasetRoutes import router as dataset_router
 from Routes.embedding_routes import router as embedding_router
 import asyncio
+
 
 app = FastAPI()
 
@@ -30,7 +35,7 @@ async def shutdown_event():
     await stop_kafka_producer()
     await stop_kafka_consumer()
 
-@app.post("message/send")
+@app.post("/message/send")
 async def send_kafka_message(message: str = Body(..., embed=True)):
     await send_message("my-topic", message)
     return {"status": "Message sent", "message": message}
